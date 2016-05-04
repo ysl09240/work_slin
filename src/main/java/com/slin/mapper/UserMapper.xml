@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace用于java代码调用时识别指定xml的mapper文件 -->
+<mapper namespace="com.slin.dao.UserMapper">
+    <select id="getUser" resultType="User">
+        select
+        id,
+        user_name AS userName,
+        password,
+        age
+        from t_user where
+        id= #{id}
+    </select>
+
+    <insert id="addUser">
+        insert into t_user(id,user_name,password,age) values(#{id},#{userName},#{password},#{age})
+    </insert>
+
+    <update id="updateUser">
+        update t_user set user_name=#{userName} ,age=#{age} where
+        id=#{id}
+    </update>
+
+    <delete id="deleteUserById">
+        delete from t_user where id=#{id};
+    </delete>
+
+</mapper>

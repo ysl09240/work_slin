@@ -3,6 +3,9 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$" />
+  </component>
   <component name="MavenBuildProjectComponent">
     <option name="mavenExecutable" value="D:\Program Files\apache-maven-3.3.9" />
     <option name="Settings File" value="C:\Users\Administrator\.m2\settings.xml" />

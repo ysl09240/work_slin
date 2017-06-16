@@ -38,6 +38,7 @@
         <!-- 把mybatis的配置加载进来  -->
         <property name="configLocation" value="classpath:configLocation.xml"></property>
         <!-- 自动扫描mapping.xml文件,由于在这里配置了自动扫描，所以不用在mybatis-config.xml中配置mappers了-->
+        <!-- 注意：自动扫描都配置正确了，却在运行时出现了如下错误。后来查看target/classes/.../dao/文件夹下，发现只有mapper的class文件，而没有xml文件，需要在pom.xml中加入build配置-->   
         <property name="mapperLocations" value="classpath*:com/slin/mapper/*.xml"></property>
     </bean>
 

@@ -32,10 +32,10 @@
         <property name="maxWait" value="${maxWait}"></property>
     </bean>
 
-    <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
+    <!-- spring和MyBatis完美整合，指mybaties配置文件，让spring发现 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <!-- 这里本来是要配置mybatis的核心配置（jdbc等）,由于与spring整合，把jdbc交给了spring,所以这里只是用来给数据模型进行别名配置  -->
+        <!-- 把mybatis的配置加载进来  -->
         <property name="configLocation" value="classpath:configLocation.xml"></property>
         <!-- 自动扫描mapping.xml文件,由于在这里配置了自动扫描，所以不用在mybatis-config.xml中配置mappers了-->
         <property name="mapperLocations" value="classpath*:com/slin/mapper/*.xml"></property>
